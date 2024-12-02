@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамічні форми</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="section">
+        <h2>Зміна кольору фону</h2>
+        <form>
+            <label><input type="radio" name="color" value="red" onchange="changeBackgroundColor(this.value)"> Червоний</label>
+            <label><input type="radio" name="color" value="green" onchange="changeBackgroundColor(this.value)"> Зелений</label>
+            <label><input type="radio" name="color" value="blue" onchange="changeBackgroundColor(this.value)"> Синій</label>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Вибір хобі</h2>
+        <form>
+            <label><input type="checkbox" value="Читання" onchange="updateHobbies()"> Читання</label>
+            <label><input type="checkbox" value="Спорт" onchange="updateHobbies()"> Спорт</label>
+            <label><input type="checkbox" value="Музика" onchange="updateHobbies()"> Музика</label>
+        </form>
+        <p>Вибрані хобі: <span id="selected-hobbies">немає</span></p>
+    </div>
+
+    <div class="section">
+        <h2>Вибір країни</h2>
+        <form>
+            <select onchange="showCountryInfo(this.value)">
+                <option value="">Оберіть країну</option>
+                <option value="Україна">Україна</option>
+                <option value="США">США</option>
+                <option value="Японія">Японія</option>
+            </select>
+        </form>
+        <p id="country-info"></p>
+    </div>
+
+    <div class="section">
+        <h2>Оцінювання якості обслуговування</h2>
+        <form>
+            <label><input type="radio" name="rating" value="1" onchange="showRatingMessage(this.value)"> 1</label>
+            <label><input type="radio" name="rating" value="2" onchange="showRatingMessage(this.value)"> 2</label>
+            <label><input type="radio" name="rating" value="3" onchange="showRatingMessage(this.value)"> 3</label>
+            <label><input type="radio" name="rating" value="4" onchange="showRatingMessage(this.value)"> 4</label>
+            <label><input type="radio" name="rating" value="5" onchange="showRatingMessage(this.value)"> 5</label>
+        </form>
+        <p id="rating-message"></p>
+    </div>
+
+    <div class="section" id="tasks">
+        <h2>Список задач</h2>
+        <input type="text" id="task-input" placeholder="Введіть задачу">
+        <button onclick="addTask()">Додати задачу</button>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script src="info.js"></script>
+</body>
+</html>
